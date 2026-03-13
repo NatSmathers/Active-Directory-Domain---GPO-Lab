@@ -14,19 +14,19 @@ Connect a Windows 11 Workstation to a Windows Server Domain and manage it with G
 
 Created an isolated Host-Only network named “VMnet2” for Windows Server 2025 and Windows 11 Workstation for this home lab. 
 
-* **SS#1**: ![Virtual Network Editor](VMnet2-Configuration.jpg.png) 
+![Virtual Network Editor](VMnet2-Configuration.jpg.png) 
 
 ## 2. Server IP Configuration
 
 Adding a static IP address to the server (10.0.0.1) is essential for the management of devices on that server for company workflow. The IP address of this server should be static so that user devices can find it for proper connection and management. The Server is its own DNS. 
 
-* **SS#2**: ![Edit IP settings](IP-Address-of-Server.jpg.png) 
+![Edit IP settings](IP-Address-of-Server.jpg.png) 
 
 ## 3. AD DS Configuration
 
 As I went through the AD DS Configuration Wizard for installation I set the Root Domain Name as “nate.local”. 
 
-* **SS#3**: ![Deployment Configuration](Root-Domain-Name.jpg.png) 
+![Deployment Configuration](Root-Domain-Name.jpg.png) 
 
 ## 4. Prerequisites Check (Problem & Solution)
 
@@ -63,17 +63,17 @@ Since the error message was still there and both VMs still can’t see each othe
 
 After doing all this troubleshooting, I finally found the issue. I checked each VMs IP address to see if they were configured properly. But I forgot to give the Windows 11 Workstation VM a static IP address with the same subnet and a default gateway. After I did that, I pinged each VM and they could communicate with each other. I then tried joining the domain once more and the problem was solved! 
 
-* **SS#13**: ![IP Fix and Success](W11-IP-Address-config.jpg.png)
-* **SS#14**: ![Domain Join Success](Welcome-to-domain.jpg.png)
+![IP Fix and Success](W11-IP-Address-config.jpg.png)
+![Domain Join Success](Welcome-to-domain.jpg.png)
 
 ## 7. GPO Implementation
 
 Once I got the Windows 11 Workstation VM on the domain (“nate.local”), I made a GPO named “Restrict_Control_Panel” for the workstation and the user “Tech.Support” that prohibits access to the control panel. Once I linked that GPO to the user (“Tech.Support”), I verified to see if it worked by going on the Windows 11 Workstation VM and trying to access the control panel and received a restrictions message. 
 
-* **SS#15**: ![GPO Restriction](Control-Panel-GPO-Config.jpg.png)
-* **SS#16**: ![GPO Verified](CP-Restrictions-Verify.jpg.png)
+![GPO Restriction](Control-Panel-GPO-Config.jpg.png)
+![GPO Verified](CP-Restrictions-Verify.jpg.png)
 
 With some more practice I tried mapping an “S:” drive named “Company Files” to that workstation. I created a GPO that did just that and linked it to the user’s workstation. I went and verified if it worked and it was a success! 
 
-* **SS#17**: ![Mapped Drive](S-Drive-Config.jpg.png)
-* **SS#18**: ![Mapped Drive Verified](S-Drive-Verify.jpg.png)
+![Mapped Drive](S-Drive-Config.jpg.png)
+![Mapped Drive Verified](S-Drive-Verify.jpg.png)
