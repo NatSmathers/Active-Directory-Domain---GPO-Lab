@@ -46,7 +46,7 @@ As I was setting up Organization Units (“_Employee”, “_Workstations”, �
 
 To fix this I had to go into the Advanced Features of the “_Workstations” OU and uncheck the box that protected the object from accidental deletion. This box is automatically checked whenever you create a new OU or Object in AD so you don’t accidentally delete something that could cause destruction to the rest of the Objects. 
 
-* **The Fix**: ![Object Protection](_Workstations-Perrmissions-Succes.jpg.png) 
+* **The Fix**: ![Object Protection](_Workstations-Perrmissions-Success.jpg.png) 
 * **Final Structure (SS#8)**: ![Active Directory Users and Computers](List-of-Objects.jpg.png) 
 
 ## 6. Connectivity Troubleshooting
