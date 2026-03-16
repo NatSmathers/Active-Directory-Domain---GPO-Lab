@@ -3,7 +3,7 @@ Connect a Windows 11 Workstation to a Windows Server Domain and manage it with G
 
 ## Environment & Specifications:
 
-* **Goal**: Establish a domain to connect and manage a Windows 11 Workstation and its User’s with Control Panel Restriction and Mapping a Network Drive GPO’s. 
+* **Goal**: Set up a Domain Controller to connect and manage a Windows 11 Workstation and its User’s with Control Panel Restriction and Mapping a Network Drive GPO’s. 
 * **Platform**: VMware Workstation (VMnet2 Host-Only) using Windows Server 2025 and Windows 11 Enterprise. 
 * **Network Types**: Host-Only (VMnet2) treated as a “sandbox” for isolation. 
 * **Subnet**: 10.0.0.0/24 with DHCP Disabled. 
